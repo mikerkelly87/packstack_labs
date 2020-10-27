@@ -7,16 +7,16 @@ so the CLI lab will need to be completed first.
 ```
 
 **LAB 1: CLI**
-This lab will use the Openstack CLI
+This lab will use the Openstack CLI  
 [LAB 1 -->](Labs/cli.md)
 
 **LAB 2: Horizon**
-This lab will use the Openstack web based dashboard called Horizon
+This lab will use the Openstack web based dashboard called Horizon  
 [LAB 2 -->](Labs/horizon.md)
 
 **LAB 3: Terraform**
 This lab will use the [Terraform](https://www.terraform.io/) Infrastructure As Code (IaC) tool.
-Terraform is used by many organizations bc it is compatible with multiple clouds (Openstack, AWS, Azure, etc).
+Terraform is used by many organizations bc it is compatible with multiple clouds (Openstack, AWS, Azure, etc).  
 [LAB 3 -->](Labs/terraform.md)
 
 
