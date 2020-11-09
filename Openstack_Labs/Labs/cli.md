@@ -141,8 +141,15 @@ openstack server add floating ip wp-web1 <X.X.X.X>
 
 It might take some time for the cloud-init script to finish depending on the speed of your hardware. Eventually you will be able to hit the Floating IP of your `wp-web1` instance in your web browser and see the Wordpress welcome screen.
 
-![](screenshots/19.png)
-
+![](screenshots/19.png)  
+  
+**Delete all 3 instances before moving on to the next Lab:**  
+```
+openstack server delete wp-web1
+openstack server delete wp-storage
+openstack server delete wp-db
+```  
+  
 
 [<-- Back to LABs](../README.md)  
 [<-- Back to Main](../../README.md)
