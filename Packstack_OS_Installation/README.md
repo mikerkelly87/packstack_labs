@@ -22,6 +22,8 @@ You will need to refer to the documentation for your specific hypervisor to lear
 2) The network interface on your VM needs to be a bridged interface.
 Again you will need to refer to the documentation for your specific hypervisor to learn how to configure this.
 The end result will be the VM existing directly on the same CIDR as your home LAN.
+
+3) Some hypervisors, such as VirtualBox, will require you to enable Promiscuous mode on the VM's network adapter.
 ```
 
 If you need steps to installing a CentOS 8 minimal installation there are steps provided here:
