@@ -116,7 +116,24 @@ Instance:
       - nfs
     - Keypair: <your_ssh_key>
     - Allocate Floating IP: Yes
+```  
+  
+**Associating Floating IPs:**
 ```
+Associate a floating IP to all 3 instances
+To do this go to
+Project -> Compute -> Instances
+  
+Then click on the dropdown menu under Actions for the instance and click on Associate Floating IP
+```  
+  
+![](screenshots/floating_ip1.png)  
+  
+```
+Then select a floating IP and click Associate
+```  
+  
+![](screenshots/floating_ip2.png)  
   
 **SSH into `wp-db` and run the following commands:**  
 ```
