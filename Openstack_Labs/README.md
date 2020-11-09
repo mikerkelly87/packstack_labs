@@ -6,13 +6,13 @@ Note: All 3 of these labs will use resources created in the CLI lab,
 so the CLI lab will need to be completed first.
 ```
 
-**LAB 1: CLI**  
-This lab will use the Openstack CLI  
-[LAB 1 -->](Labs/cli.md)
+**LAB 1: Horizon**  
+This lab will use the Openstack web based dashboard called Horizon 
+[LAB 1 -->](Labs/horizon.md)
 
-**LAB 2: Horizon**  
-This lab will use the Openstack web based dashboard called Horizon  
-[LAB 2 -->](Labs/horizon.md)
+**LAB 2: CLI**  
+This lab will use the Openstack CLI 
+[LAB 2 -->](Labs/cli.md)
 
 **LAB 3: Terraform**  
 This lab will use the [Terraform](https://www.terraform.io/) Infrastructure As Code (IaC) tool.
