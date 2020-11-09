@@ -47,7 +47,7 @@ vim ~/wp-storage.sh
 dnf install -y dnf nfs-utils vim bash-completion
 systemctl enable nfs-server
 mkdir -p /var/www/html/
-echo "/var/www/html 192.168.0.0/24(rw,sync,no_root_squash)" >> /etc/exports
+echo "/var/www/html 192.168.70.0/24(rw,sync,no_root_squash)" >> /etc/exports
 setenforce 0
 sed -i 's/SELINUX=enforcing/SELINUX=permissive/' /etc/selinux/config
 systemctl start nfs-server
@@ -100,7 +100,8 @@ vim ~/wp-web1.sh
 #!/bin/bash
 dnf install -y httpd mariadb-common php-fpm php-mysqlnd wget php-json tar bash-completion vim nfs-utils nfs4-acl-tools
 systemctl enable httpd && systemctl start httpd
-echo "<INTERNAL_NET_IP_OF_wp-storage_SERVER>:/var/www/html /var/www/html nfs defaults 0 0" >> /etc/fstab
+### REPLACE X.X.X.X WITH THE INTERNAL_NET IP (192.168.70.X) OF THE wp-storage SERVER
+echo "X.X.X.X:/var/www/html /var/www/html nfs defaults 0 0" >> /etc/fstab
 mount -a
 wget https://www.wordpress.org/latest.tar.gz
 tar -xzvf latest.tar.gz
@@ -109,14 +110,14 @@ cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
 sed -i 's/database_name_here/wordpress/' /var/www/html/wp-config.php
 sed -i 's/username_here/wordpress_user/' /var/www/html/wp-config.php
 sed -i 's/password_here/password12345/' /var/www/html/wp-config.php
-sed -i 's/localhost/<INTERNAL_NET_IP_OF_wp-db_SERVER>/' /var/www/html/wp-config.php
+### REPLACE X.X.X.X WITH THE INTERNAL_NET IP (192.168.70.X) OF THE wp-db SERVER
+sed -i 's/localhost/X.X.X.X/' /var/www/html/wp-config.php
 setenforce 0
 sed -i 's/SELINUX=enforcing/SELINUX=permissive/' /etc/selinux/config
 ```
 ```
-Be sure to replace:
-<INTERNAL_NET_IP_OF_wp-storage_SERVER>
-<INTERNAL_NET_IP_OF_wp-db_SERVER>
+Be sure to replace both instances of:
+X.X.X.X
 in the script above
 ```
 
