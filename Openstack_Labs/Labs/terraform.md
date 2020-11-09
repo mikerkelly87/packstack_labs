@@ -220,6 +220,7 @@ done
 
 **Initialize the Terraform working directory:**
 ```
+cd ~/wordpress_lab/
 terraform init
 ```
 
