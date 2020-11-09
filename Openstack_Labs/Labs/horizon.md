@@ -201,6 +201,12 @@ sed -i 's/SELINUX=enforcing/SELINUX=permissive/' /etc/selinux/config
 **Now you can hit the floating IP of your `wp-web1` server in your web browser to configure wordpress:**  
 ![](screenshots/19.png)  
   
+**Delete all 3 instances before moving on to the next Lab:**  
+```
+Go to Project -> Compute -> Instances
+Select the checkbox to the left of all 3 instances and click on Delete Instances
+```   
+![](screenshots/delete_instances.png)  
 
 
 [<-- Back to LABs](../README.md)  
