@@ -192,7 +192,8 @@ cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
 sed -i 's/database_name_here/wordpress/' /var/www/html/wp-config.php
 sed -i 's/username_here/wordpress_user/' /var/www/html/wp-config.php
 sed -i 's/password_here/password12345/' /var/www/html/wp-config.php
-sed -i 's/localhost/<INTERNAL_NET_IP_OF_wp-db_SERVER/' /var/www/html/wp-config.php
+### REPLACE X.X.X.X WITH THE INTERNAL_NET IP (192.168.70.X) OF THE wp-db SERVER
+sed -i 's/localhost/X.X.X.X/' /var/www/html/wp-config.php
 setenforce 0
 sed -i 's/SELINUX=enforcing/SELINUX=permissive/' /etc/selinux/config
 ```
