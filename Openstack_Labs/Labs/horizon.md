@@ -138,6 +138,7 @@ Then select a floating IP and click Associate
 Note: The username for CentOS cloud images is `centos` and be sure to SSH into the Floating IP
 ```
 ```
+sudo -i
 dnf install -y mariadb-server vim bash-completion
 systemctl enable mariadb
 systemctl start mariadb
