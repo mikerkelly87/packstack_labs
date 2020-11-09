@@ -104,7 +104,6 @@ Instance:
       - SSH
       - mysql
     - Keypair: <your_ssh_key>
-    - Allocate Floating IP: Yes
   - name: wp-storage
     - Boot Source: image
     - Create New Volume: No
@@ -115,7 +114,6 @@ Instance:
       - SSH
       - nfs
     - Keypair: <your_ssh_key>
-    - Allocate Floating IP: Yes
 ```  
   
 **Associating Floating IPs:**
