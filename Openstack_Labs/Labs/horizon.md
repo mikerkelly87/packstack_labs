@@ -168,7 +168,7 @@ sudo -i
 dnf install -y dnf nfs-utils vim bash-completion
 systemctl enable nfs-server
 mkdir -p /var/www/html/
-echo "/var/www/html 192.168.0.0/24(rw,sync,no_root_squash)" >> /etc/exports
+echo "/var/www/html 192.168.70.0/24(rw,sync,no_root_squash)" >> /etc/exports
 systemctl start nfs-server
 setenforce 0
 sed -i 's/SELINUX=enforcing/SELINUX=permissive/' /etc/selinux/config
