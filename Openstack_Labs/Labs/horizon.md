@@ -31,8 +31,8 @@ Project -> Network -> Security Groups
 **Find your Security Group in the list and click on `Manage Rules`:**  
 ![](screenshots/5.png)  
   
-**Click on `Add Rule`:**
-![](screenshots/6.png)
+**Click on `Add Rule`:**  
+![](screenshots/6.png)  
   
 **In the `Rule` dropdown at the top select `SSH` and click `Add`:**  
 ![](screenshots/7.png)  
