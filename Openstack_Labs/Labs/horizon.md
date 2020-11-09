@@ -22,22 +22,22 @@ Project -> Network -> Security Groups
 ```
 ![](screenshots/2.png)
 
-**Click on `Create Security Group`:**
-![](screenshots/3.png)
-
-**Give the Security Group a name of `SSH`:**
-![](screenshots/4.png)
-
-**Find your Security Group in the list and click on `Manage Rules`:**
-![](screenshots/5.png)
-
+**Click on `Create Security Group`:**  
+![](screenshots/3.png)  
+  
+**Give the Security Group a name of `SSH`:**  
+![](screenshots/4.png)  
+  
+**Find your Security Group in the list and click on `Manage Rules`:**  
+![](screenshots/5.png)  
+  
 **Click on `Add Rule`:**
 ![](screenshots/6.png)
-
-**In the `Rule` dropdown at the top select `SSH` and click `Add`:**
-![](screenshots/7.png)
-
-**Add a Rule for ICMP to the `SSH` Security Group and then create the following additional Security Groups:**
+  
+**In the `Rule` dropdown at the top select `SSH` and click `Add`:**  
+![](screenshots/7.png)  
+  
+**Add a Rule for ICMP to the `SSH` Security Group and then create the following additional Security Groups:**  
 ```
 Security-Group:
   - name: mysql
@@ -58,40 +58,40 @@ Security-Group:
       - Custom UDP Rule:
         - Port: 2049
 ```
-
-Next let's create a web server.
-
-**Go to:**
+  
+Next let's create a web server.  
+  
+**Go to:**  
 ```
 Project -> Compute -> Instances
 Launch Instance
 ```
-
-![](screenshots/8.png)
-![](screenshots/9.png)
-
-**Give the Instance a name of `wp-web1`:**
-![](screenshots/10.png)
-
-**For the Boot Source use an `image` say `No` to `Create New Volume` and select the `CentOS 8` image:**
-![](screenshots/11.png)
-
-**For the Flavor just use `small` or if you created your own use one with 1 vCPU and at least 512MB of RAM:**
-![](screenshots/12.png)
-
-**For the Networks just add the `INTERNAL_NET` network:**
-![](screenshots/13.png)
-
-**For the Security Groups allocate the `web` and `SSH` Security Groups:**
-![](screenshots/14.png)
-
-**For the Key Pair add the SSH key from the machine you will be SSH'ing in from:**
-![](screenshots/15.png)
-
-**Now click on `Launch Instance`:**
-![](screenshots/16.png)
-
-**Follow the same Instance creation steps to create the following 2 instances:**
+  
+![](screenshots/8.png)  
+![](screenshots/9.png)  
+  
+**Give the Instance a name of `wp-web1`:**  
+![](screenshots/10.png)  
+  
+**For the Boot Source use an `image` say `No` to `Create New Volume` and select the `CentOS 8` image:**  
+![](screenshots/11.png)  
+  
+**For the Flavor just use `small` or if you created your own use one with 1 vCPU and at least 512MB of RAM:**  
+![](screenshots/12.png)  
+  
+**For the Networks just add the `INTERNAL_NET` network:**  
+![](screenshots/13.png)  
+  
+**For the Security Groups allocate the `web` and `SSH` Security Groups:**  
+![](screenshots/14.png)  
+  
+**For the Key Pair add the SSH key from the machine you will be SSH'ing in from:**  
+![](screenshots/15.png)  
+  
+**Now click on `Launch Instance`:**  
+![](screenshots/16.png)  
+  
+**Follow the same Instance creation steps to create the following 2 instances:**  
 ```
 Instance:
   - name: wp-db
@@ -117,7 +117,8 @@ Instance:
     - Keypair: <your_ssh_key>
     - Allocate Floating IP: Yes
 ```
-**SSH into `wp-db` and run the following commands:**
+  
+**SSH into `wp-db` and run the following commands:**  
 ```
 Note: The username for CentOS cloud images is `centos` and be sure to SSH into the Floating IP
 ```
@@ -141,7 +142,8 @@ mysql -e "CREATE USER 'wordpress_user'@'%' IDENTIFIED BY 'password12345'"
 mysql -e "GRANT ALL ON wordpress.* TO 'wordpress_user'@'%'"
 mysql -e "FLUSH PRIVILEGES"
 ```
-**SSH into `wp-storage` and run the following commands:**
+  
+**SSH into `wp-storage` and run the following commands:**  
 ```
 Note: The username for CentOS cloud images is `centos` and be sure to SSH into the Floating IP
 ```
@@ -155,8 +157,8 @@ systemctl start nfs-server
 setenforce 0
 sed -i 's/SELINUX=enforcing/SELINUX=permissive/' /etc/selinux/config
 ```
-
-**SSH into `wp-web1` and run the following commands:**
+  
+**SSH into `wp-web1` and run the following commands:**  
 ```
 Note: The username for CentOS cloud images is `centos` and be sure to SSH into the Floating IP
 ```
@@ -177,9 +179,10 @@ sed -i 's/localhost/<INTERNAL_NET_IP_OF_wp-db_SERVER/' /var/www/html/wp-config.p
 setenforce 0
 sed -i 's/SELINUX=enforcing/SELINUX=permissive/' /etc/selinux/config
 ```
-**Now you can hit the floating IP of your `wp-web1` server in your web browser to configure wordpress:**
-![](screenshots/19.png)
-
+  
+**Now you can hit the floating IP of your `wp-web1` server in your web browser to configure wordpress:**  
+![](screenshots/19.png)  
+  
 
 
 [<-- Back to LABs](../README.md)
