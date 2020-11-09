@@ -182,7 +182,8 @@ Note: The username for CentOS cloud images is `centos` and be sure to SSH into t
 sudo -i
 dnf install -y httpd mariadb-common php-fpm php-mysqlnd wget php-json tar bash-completion vim nfs-utils nfs4-acl-tools
 systemctl enable httpd && systemctl start httpd
-echo "192.168.0.189:/var/www/html /var/www/html nfs defaults 0 0" >> /etc/fstab
+### REPLACE X.X.X.X WITH THE INTERNAL_NET IP (192.168.70.X) OF THE wp-storage SERVER
+echo "X.X.X.X:/var/www/html /var/www/html nfs defaults 0 0" >> /etc/fstab
 mount -a
 wget https://www.wordpress.org/latest.tar.gz
 tar -xzvf latest.tar.gz
