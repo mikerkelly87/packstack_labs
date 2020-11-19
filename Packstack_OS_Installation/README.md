@@ -14,7 +14,7 @@ You can probably get away with the following:
 100GB SSD/HDD
 1 NIC
 ```
-If you're going to be running this in a VM there are two things to be aware of
+If you're going to be running this in a VM there are a few things to be aware of
 ```
 1) You need to make sure the VM supports nested virtualization, without this the Openstack instances will not boot.
 You will need to refer to the documentation for your specific hypervisor to learn how to enable this.
