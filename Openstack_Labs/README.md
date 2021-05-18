@@ -2,8 +2,8 @@
 
 **All 3 of these labs will accomplish the same goals but will use a different method**
 ```
-Note: All 3 of these labs will use resources created in the CLI lab,
-so the CLI lab will need to be completed first.
+Note: All 3 of these labs will use resources created in the Horizon lab,
+so the Horizon lab will need to be completed first.
 ```
 
 **LAB 1: Horizon**  
