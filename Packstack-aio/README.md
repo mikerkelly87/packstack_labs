@@ -143,9 +143,9 @@ for i in {1..5};do openstack flavor delete $i;done
 
 **Create some instance flavors with some lower specs that make more sense for our environment:**
 ```
-openstack flavor create --public small --id auto --ram 512 --disk 10 --vcpus 1 --rxtx-factor 1
-openstack flavor create --public medium --id auto --ram 1024 --disk 15 --vcpus 1 --rxtx-factor 1
-openstack flavor create --public large --id auto --ram 2048 --disk 20 --vcpus 2 --rxtx-factor 1
+openstack flavor create --public small --ram 512 --disk 10 --vcpus 1 --rxtx-factor 1
+openstack flavor create --public medium --ram 1024 --disk 15 --vcpus 1 --rxtx-factor 1
+openstack flavor create --public large --ram 2048 --disk 20 --vcpus 2 --rxtx-factor 1
 ```
 Note: You can adjust these specs to your liking, these just felt pretty sane.
 
